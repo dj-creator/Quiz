@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 1000px;
+        width: 100%;
+        background-color: navy;
+    }
+
+    .Title {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 100px;
+        color: white;
+    }
+    .container{
+        height: 1000px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .Form{
+        background-color: white;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <h1 class="Title">Black Test</h1>
+    <div class="container">
+        <form class="Form">
+            <p>1.What KoolAid Do You Prefer?</p>
+            <input type="radio" class="A1" name="primero" value="Blue Rasberry" />
+            <label for="A1">Blue Rasberry</label>
+            <br>
+            <input type="radio" class="A2" name="primero" value="Purple" />
+            <label for="A2">Purple</label>
+            <br>
+            <input type="radio" class="A3" name="primero" value="Grape" />
+            <label for="A3">Grape</label>
+            <br>
+            <input type="radio" class="A4" name="primero" value="Fruit Punch" />
+            <label for="A4">Red</label><br /><br />
+
+            <p>2.What Kind Of Music Do you Prefer?</p>
+            <input type="radio" class="B1" name="segundo" value="Country" />
+            <label for="B1">Country</label>
+            <br>
+            <input type="radio" class="B2" name="segundo" value="Jazz" />
+            <label for="B2">Jazz</label>
+            <br>
+            <input type="radio" class="B3" name="segundo" value="HipHop" />
+            <label for="B3">HipHop</label>
+            <br>
+            <input type="radio" class="B4" name="segundo" value="Disco" />
+            <label for="B4">Disco</label><br /><br />
+            <br>
+            <p>3.What Sport Would You Prefer?</p>
+            <input type="radio" class="C1" name="tercero" value="Basketball" />
+            <label for="C1">Basketball</label>
+            <br>
+            <input type="radio" class="C2" name="tercero" value="Tennis" />
+            <label for="C2">Tennis</label>
+            <br>
+            <input type="radio" class="C3" name="tercero" value="Soccer" />
+            <label for="C3">Soccer</label>
+            <br>
+            <input type="radio" class="C4" name="tercero" value="Golf" />
+            <label for="C4">Golf</label><br /><br />
+            <br />
+            <p>4.What Kinds Of Foods Do You Eat?</p>
+            <input type="radio" class="D1" name="Cuatro" value="Hispanic Dishes" />
+            <label for="D1">Hispanic Dishes</label>
+            <br>
+            <input type="radio" class="D2" name="Cuatro" value="American Food" />
+            <label for="D2">American Food</label>
+            <br>
+            <input type="radio" class="D3" name="Cuatro" value="Mixture Of Everything" />
+            <label for="D3">Mixture Of Everything</label>
+            <br>
+            <input type="radio" class="D4" name="Cuatro" value="Unseasoned Chicken " />
+            <label for="D4">Unseasoned Chicken</label><br /><br /><br />
+
+            <p>
+                5.How Would Your Parents Respond If You Were "Going inside And Out The
+                House"?</p>
+            <input type="radio" class="E1" name="quinto" value="Stop It Pumpkin" />
+            <label for="E1">Stop It Pumpkin</label>
+            <br>
+            <input type="radio" class="E2" name="quinto" value="Close The Door On Your Way Out!">
+            <label for="E2">Close The Door On Your Way Out!</label>
+            <br>
+            <input type="radio" class="E3" name="quinto" value="You EIther In Or Out " />
+            <label for="E3">You Either In Or Out! </label>
+            <br>
+            <input type="radio" class="E4" name="quinto" value="Close The Door Please" />
+            <label for="E4">Close The Door Please ?</label><br /><br /><br />
+
+            <input type="submit" class="click" /><br /><br />
+            <p>Your score is: <span id="score">0</span> /100 </p>
+        </form>
+    </div>
+    
+</body>
+<script>
+    // querySelctorAll elements with same attribute like:<p>
+    const doc = document.querySelectorAll("input");
+    // button that submits answer
+    const submit = document.querySelector(".click");
+
+    const div = document.querySelector("div");
+
+
+
+    submit.addEventListener("click", turnIn);
+
+    function turnIn(e) {
+
+        let score = 0;
+        e.preventDefault();
+        //if purple; raido button is selected then the if function runs
+        if (doc[1].checked) {
+            // adds 20 points to score : +=
+            score += 20;
+            console.log(score);
+        }
+        if (doc[6].checked) {
+            score += 20;
+        }
+        if (doc[8].checked) {
+            score += 20;
+        }
+        if (doc[14].checked) {
+            score += 20;
+        }
+        if (doc[18].checked) {
+            score += 20;
+        }
+        const scoreDisplay = document.getElementById("score");
+        scoreDisplay.innerHTML = score;
+
+        console.log(score)
+
+    }
+</script>
+
+</html>
